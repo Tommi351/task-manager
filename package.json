@@ -3,8 +3,10 @@
     "concurrently": "^9.2.1"
   },
   "scripts": {
-    "server": " cd backend && node server.js",
-    "client": "cd frontend && npm run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "cd backend && node server.js",
+    "build": "cd frontend && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server:dev": " cd backend && node server.js",
+    "client:dev": "cd frontend && npm run dev"
   }
 }

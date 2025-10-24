@@ -16,11 +16,11 @@ function Login() {
  
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {isError, isSuccess, isLoading, message} = useSelector((state) => state.auth);
+  const {isError, isSuccess, isLoading} = useSelector((state) => state.auth);
   
   useEffect(() => {
    if (isError) {
-    toast.error(`Username or password is incorrect: ${message}`);
+    toast.error('Username or password is incorrect');
    }
 
    if (isSuccess) {
@@ -28,7 +28,7 @@ function Login() {
    }
 
    dispatch(reset());
-  }, [isError, isSuccess, message, navigate, dispatch])
+  }, [isError, isSuccess, navigate, dispatch])
 
   const onChange = (e) => {
     setFormData((prevState) => ({
