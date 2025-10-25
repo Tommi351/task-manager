@@ -10,7 +10,7 @@ const createTask = async (taskData, token) => {
         }
     }
 
-    const response = await axios.post(`${process.env.VITE_API_URL}/${API_URL}`, taskData, config);
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/${API_URL}`, taskData, config);
 
     if (response.data) {
         localStorage.getItem('task')
@@ -27,7 +27,7 @@ const getTasks = async (token) => {
         }
     }
 
-    const response = await axios.get(`${process.env.VITE_API_URL}/${API_URL}`, config);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/${API_URL}`, config);
 
     return response.data
 }
@@ -40,7 +40,7 @@ const updateTask = async (id, taskData, token) => {
         }
     }
 
-    const response = await axios.put(`${process.env.VITE_API_URL}/${API_URL}/${id}`, taskData, config);
+    const response = await axios.put(`${import.meta.env.VITE_API_URL}/${API_URL}/${id}`, taskData, config);
 
     return response.data
 }
@@ -53,7 +53,7 @@ const deleteTask = async (id, token) => {
         }
     }
 
-    const response = await axios.delete(`${process.env.VITE_API_URL}/${API_URL}/${id}`, config);
+    const response = await axios.delete(`${import.meta.env.VITE_API_URL}/${API_URL}/${id}`, config);
 
     return response.data
 }

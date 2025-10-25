@@ -5,7 +5,7 @@ const Login_URL = 'users/login'
 
 // Register user
 const register = async (userData) => {
-    const response = await axios.post(`${process.env.VITE_API_URL}/${API_URL}`, userData);
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/${API_URL}`, userData);
     
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))
@@ -16,7 +16,7 @@ const register = async (userData) => {
 
 // Login user
 const login = async (userData) => {
-    const response = await axios.post(`${process.env.VITE_API_URL}/${Login_URL}`, userData);
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/${Login_URL}`, userData);
     
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))
