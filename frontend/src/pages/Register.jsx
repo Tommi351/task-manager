@@ -24,7 +24,7 @@ function Register() {
 
     useEffect(() => {
       if (isError) {
-        toast.error(message)
+        toast.error("User already exists")
       } 
       
       if (isSuccess || user) {
@@ -33,7 +33,7 @@ function Register() {
 
       dispatch(reset());
 
-   }, [user, isError, isSuccess, message, navigate, dispatch]);
+   }, [user, isError, isSuccess, navigate, dispatch]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
