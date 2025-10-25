@@ -17,7 +17,7 @@ const User = require('./models/User');
 connectDB();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://task-manager-frontend-one-umber.vercel.app"]
 }));
 
 app.use(express.json());
